@@ -10,7 +10,7 @@
 
 #define MAX_BEACON_CLIENTS  60      // Max beacons (AP Points) 
 #define MAX_AP_CLIENTS      20      // Max AP clients (Phones, Laptops etc...)
-#define JSON_BUFFER_SIZE    2048    // Tha max JSON buffer size. Use: 
+#define JSON_BUFFER_SIZE    8192    // Tha max JSON buffer size. Use: 
 
 // Constants these values aren't likely to change.
 #define ETH_MAC_LEN     6   // Defined in ExpressIFs SDK

@@ -60,15 +60,21 @@ void sendData(Beacon beacons[], APClient clients[], unsigned int beaconCount, un
     // add Beacons
     for (int i = 0; i < beaconCount; i++) {
         JsonObject& jBeacon = jBeacons.createNestedObject();
-        jBeacon["mac"]  = formatMac(beacons[i].bssid);
-        jBeacon["rssi"] = beacons[i].rssi;
+        jBeacon["bssid"]    = formatMac(beacons[i].bssid);
+        jBeacon["ssid"]     = beacons[i].ssid;
+        jBeacon["rssi"]     = beacons[i].rssi;
+        jBeacon["channel"]  = beacons[i].channel;
     }
 
     // Add Clients
     for (int i = 0; i < clientCount; i++) {
         JsonObject& jClient = jClients.createNestedObject();
-        jClient["mac"]  = formatMac(clients[i].bssid);
+        jClient["bssid"]    = formatMac(clients[i].bssid);
+        jClient["station"]  = formatMac(clients[i].station);
+        jClient["ap"]       = formatMac(clients[i].ap);
+
         jClient["rssi"] = clients[i].rssi;
+        jClient["channel"] = clients[i].channel;
     }
 
     String out;
